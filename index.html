@@ -7,57 +7,116 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+
     <header>
         <nav>
-            <ul>
+            <ul id="nav-list">
                 <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Projets</a></li>
+                <li><a href="#about">Qui suis-je ?</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#projects">Réalisations</a></li>
+                <li><a href="assets/CV Jody Tavares.pdf" target="_blank" class="btn-cv">Mon CV</a></li>
+                <li>
+                    <a href="https://github.com/Jody-tvs" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/jody-tavares-9762261b8/" target="_blank" class="btn-linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <section id="home">
-            <h1>Jody Tavares</h1>
+            <div class="home-content">
+                <h1>Jody Tavares</h1>
+                <img src="images/Jo.jpeg" alt="Jody Tavares photo" class="home-photo">
+            </div>
         </section>
 
         <section id="about">
-            <h2>À propos de moi</h2>
-            <p>Bonjour et bienvenue sur mon portfolio ! Je suis Jody, développeuse web full stack, fraîchement diplômée et prête à relever tous les défis du digital.
+            <h2>Présentation</h2> <br>
+            <p>Salut ! Bienvenue dans mon petit coin de web. Je suis Jody, développeuse web full stack, fraîchement diplômée et prête à relever les défis les plus fous. 😎</p><br>
 
-                Avant de plonger dans le code, j’ai passé quelques années à perfectionner mes compétences humaines et organisationnelles en travaillant comme responsable chez Intersport et assistante de direction chez McDonald’s. Ces expériences m’ont appris à gérer des équipes, planifier des projets, et garder mon calme même dans les situations les plus complexes (croyez-moi, les rushs de fin d’année n’ont rien à envier aux bugs de dernière minute !).
+            <p>Avant de plonger dans le code, j’ai passé quelques années à perfectionner mes compétences humaines et organisationnelles en tant que responsable chez Intersport et assistante de direction chez McDonald’s. Ces expériences m’ont appris à gérer des équipes, à planifier des projets et à garder mon calme, même dans les situations les plus complexes. (Croyez-moi, les rushs de fin d’année n’ont rien à envier aux bugs de dernière minute ! 😅)</p> <br>
                 
-                Aujourd’hui, je mets cette rigueur et cette adaptabilité au service du web. Mon objectif est simple : concevoir des sites et des applications efficaces, modernes et agréables à utiliser. J’aime particulièrement travailler sur des projets qui allient créativité et technique, avec un petit côté "pratique avant tout".
-                
-                En dehors de mon clavier, j’aime explorer de nouvelles idées, apprendre et sortir de ma zone de confort, que ce soit pour un projet ou dans la vie en général. Je crois sincèrement que chaque expérience est une occasion de progresser, et c’est avec cet état d’esprit que j’aborde mes projets professionnels.
-                
-                Merci d’être là, et n’hésitez pas à découvrir mes réalisations. Peut-être qu’on pourrait construire ensemble votre prochain projet ?</p>
-        </section>
+            <p>Aujourd’hui, cette rigueur et cette adaptabilité me servent dans le domaine du web. Mes envies et objectifs sont simples : concevoir des sites et des applications efficaces, agréables et fun à utiliser. J’aime particulièrement travailler sur des projets qui allient créativité et technique, avec un petit côté "pratique avant tout".
+                Je crois sincèrement que chaque expérience est une occasion de progresser, et c’est avec cet état d’esprit que j’aborde ce que j’entreprends.</p> <br>
 
+                <p>En dehors du web, j’aime explorer de nouveaux endroits 🌍, admirer de beaux paysages, faire de l'escalade avec des amis, les soirées jeu de société, et plein d'autres choses encore.</p> <br>
+                
+                <p>Je te laisse explorer la suite ! 🔎</p>
+            </section>
+        
+            <section id="skills">
+                <h2>Mes compétences</h2>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <p>HTML</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-css3-alt"></i>
+                        <p>CSS</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-react"></i>
+                        <p>React</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-node-js"></i>
+                        <p>Node.js</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-database"></i>
+                        <p>SQL</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-sass"></i>
+                        <p>SASS</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-github"></i>
+                        <p>Github</p>
+                    </div>
+                </div>
+            </section>
+            
         <section id="projects">
-            <h2>Mes projets</h2>
+            <h2>Mes Réalisations</h2>
             <div class="project">
-                <h3>Folie d'Armes site e-commerce</h3>
-                <p>Un site web créé avec JavaScript, SASS et HTML.</p>
-                <a href="projets/projet1.html" class="btn-primary">En savoir plus</a>
+                <h3>Folie d'Armes</h3>
+                <p>Site e-commerce créé avec JavaScript, SASS et HTML.</p>
+                <a href="projets/projet1.html" class="btn-primary">Détails du projet</a>
             </div>
 
-            <div class="project">
-                <h3>Ce portfolio</h3>
-                <p>Portfolio créé avec HTML, CSS et JavaScript.</p>
-                <a href="projets/projet2.html" class="btn-primary">En savoir plus</a>
-            </div>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Email : jodytavares.pro@gmail.com</p>
-            <p>Téléphone : 06 59 61 18 77</p>
+            <h2>Contactez-moi</h2> <br>
+            <p>
+                <span class="contact-item">
+                <i class="fas fa-phone phone"></i><a href="tel:+33659611877">06 59 61 18 77</a>
+            </span>
+            <span class="contact-item">
+                <i class="fas fa-envelope email"></i><a href="mailto:jodytavares.pro@gmail.com">jodytavares.pro@gmail.com</a>
+            </span>
+              </p>
         </section>
     </main>
     <footer>
-        <p>© 2024 Jody Tavares</p>
+        <p>&copy; 2024 Jody Tavares | Tous droits réservés.</p>
     </footer>
+
+    <script src="scripts/app.js"></script>
 </body>
 </html>

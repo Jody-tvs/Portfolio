@@ -1,43 +1,54 @@
-/* Variables globales pour des couleurs harmonieuses */
+/* Variables globales pour l'identité visuelle */
+/* Variables globales pour l'identité visuelle */
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'); /* Import des icônes Font Awesome */
+
 :root {
-  --primary-color: #ff862d; /* Vert élégant */
-  --secondary-color: #000; /* Noir profond */
-  --accent-color: #01605a; /* Orange vif */
-  --background-color: #f4f4f4; /* Gris clair */
-  --text-color: #333; /* Gris foncé */
-  --white: #fff; /* Blanc */
-  --background: #ffd0a8; /* Beige */
+  --primary-color: #00b7af; /* Bleu turquoise */
+  --secondary-color: #e9630a; /* Orange vif */
+  --accent-color: #fee7b3; /* Beige doux */
+  --background-color: #f3f4f6; /* Gris clair */
+  --text-color: #333333; /* Gris très foncé */
+  --white: #ffffff; /* Blanc pur */
+  --button-hover-color: #ff8c42; /* Orange plus doux pour contraste */
+  --button-text-color: #111111; /* Couleur foncée pour boutons */
 }
 
 /* Reset CSS */
 * {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* Corps de la page */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Funnel Sans', sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   line-height: 1.6;
 }
 
+/* Typographie titres */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Delius', cursive;
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
+
 /* Header */
 header {
-  position: fixed;
-  top: 0;
   width: 100%;
-  background: var(--secondary-color);
+  background: var(--primary-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  padding: 10px 0;
 }
 
 header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
 }
 
 header nav ul li {
@@ -49,39 +60,68 @@ header nav ul li a {
   color: var(--white);
   font-weight: bold;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header nav ul li a:hover {
-  color: var(--accent-color);
+  color: var(--secondary-color);
+  transform: scale(1.1);
 }
 
 /* Sections */
-main {
-  margin-top: 80px; /* Pour compenser la hauteur du header */
-}
-
 section {
   padding: 4rem 2rem;
   text-align: center;
+  position: relative;
+  background-color: var(--accent-color);
 }
 
+/* Effet de vague après Jody Tavares et au-dessus de Contact */
+#home::after, #contact::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('../assets/wave.svg') repeat-x;
+  background-size: cover;
+  z-index: 1;
+}
+
+#home::after {
+  bottom: -20px;
+}
+
+#contact::before {
+  top: -20px;
+  transform: rotate(180deg);
+}
+
+/* Modification pour #home */
 #home {
-  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  background-color: var(--primary-color);
   color: var(--white);
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;
 }
 
 #home h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  animation: fadeIn 1s ease-in-out;
+  color: var(--white);
 }
 
-#home p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  animation: fadeIn 1.5s ease-in-out;
+#home .home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.home-photo {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid var(--secondary-color);
 }
 
 #projects .project {
@@ -104,139 +144,271 @@ section {
   margin-bottom: 0.5rem;
 }
 
-#projects .project p {
-  margin-bottom: 1rem;
-}
-
 #projects .project a {
-  color: var(--accent-color);
+  color: var(--button-text-color);
+  background-color: var(--secondary-color);
   text-decoration: none;
   font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 #projects .project a:hover {
-  text-decoration: underline;
-}
-
-/* Ajout de transitions et animations */
-.project-section {
-  padding: 4rem 2rem;
-  background: var(--background);
-  text-align: center;
-}
-
-.project-section h1 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.project-section p, .project-section ul {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.project-section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.project-section ul li {
-  margin-bottom: 0.8rem;
-}
-
-.project-section .links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.project-section .links a {
-  text-decoration: none;
-  padding: 1rem 2rem;
-  background-color: var(--primary-color);
-  color: var(--white);
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.project-section .links a:hover {
-  background-color: var(--accent-color);
-  transform: translateY(-5px);
-}
-
-/* Responsiveness pour la section projets */
-@media (max-width: 768px) {
-  .project-section h1 {
-    font-size: 2rem;
-  }
-  .project-section p, .project-section ul {
-    font-size: 1rem;
-  }
-  .project-section .links {
-    flex-direction: column;
-  }
-}
-
-
-#about {
-  background: var(--background);
-  color:var(--text-color);
+  background-color: var(--button-hover-color);
+  transform: scale(1.05);
 }
 
 #contact {
-  background: var(--secondary-color);
+  background: var(--primary-color);
   color: var(--white);
+  padding: 3rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #contact p {
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
 }
 
+#contact p .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#contact p i {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+/* Section Mes compétences */
+#skills {
+  padding: 4rem 2rem;
+  background-color: var(--accent-color);
+  text-align: center;
+}
+
+#skills h2 {
+  font-family: 'Delius', cursive;
+  color: var(--secondary-color);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.skill i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill p {
+  font-family: 'Funnel Sans', sans-serif;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skill:hover i {
+  color: var(--secondary-color);
+  transform: rotate(10deg);
+}
+
+/* Section Présentation du projet */
+#details {
+  background-color: var(--accent-color);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Section Technologies */
+#technologies {
+  background-color: var(--accent-color);
+  padding: 4rem 2rem;
+}
+
+#technologies .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Section Fonctionnalités */
+#features {
+  background-color: var(--accent-color);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+#features ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: var(--text-color);
+  position: relative;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Section Vidéo */
+#demo {
+  background-color: var(--accent-color);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#demo video {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem 0;
-  background: var(--primary-color);
+  background: var(--secondary-color);
   color: var(--white);
-  font-size: 0.9rem;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+footer p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
+footer p .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer p i {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+footer p i.email {
+  color: var(--primary-color);
+}
+
+footer p i.phone {
+  color: var(--secondary-color);
+}
+
+/* Responsive Footer */
+@media (min-width: 768px) {
+  footer p {
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    text-align: center;
   }
 
-  header nav ul li {
-    margin: 0.5rem 0;
+  footer p .contact-item {
+    flex-direction: row;
+  }
+}
+
+/* Boutons interactifs */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--button-hover-color);
+  transform: scale(1.05);
+}
+
+/* Animation moderne au survol des liens */
+a {
+  position: relative;
+  display: inline-block;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transition: width 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Mobile First Styles */
+header nav ul {
+  flex-direction: column;
+  align-items: center;
+}
+
+header nav ul li {
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  header nav ul {
+    flex-direction: row;
+    justify-content: space-around;
   }
 
   #home h1 {
-    font-size: 2.5rem;
-  }
-
-  #home p {
-    font-size: 1.2rem;
+    font-size: 4rem;
   }
 
   #projects .project {
-    max-width: 100%;
-    padding: 1.5rem;
+    max-width: 800px;
   }
 }
