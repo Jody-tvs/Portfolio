@@ -1,28 +1,24 @@
-/* Variables globales pour l'identité visuelle */
-/* Variables globales pour l'identité visuelle */
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'); /* Import des icônes Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 :root {
-  --primary-color: #00b7af; /* Bleu turquoise */
-  --secondary-color: #e9630a; /* Orange vif */
-  --accent-color: #fee7b3; /* Beige doux */
-  --background-color: #f3f4f6; /* Gris clair */
-  --text-color: #333333; /* Gris très foncé */
-  --white: #ffffff; /* Blanc pur */
-  --button-hover-color: #ff8c42; /* Orange plus doux pour contraste */
-  --button-text-color: #111111; /* Couleur foncée pour boutons */
+  --primary-color: #00b7af; 
+  --secondary-color: #e9630a; 
+  --accent-color: #fee7b3; 
+  --background-color: #f3f4f6; 
+  --text-color: #333333; 
+  --white: #ffffff; 
+  --button-hover-color: #ff8c42; 
+  --button-text-color: #111111; 
 }
 
-/* Reset CSS */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Corps de la page */
 body {
   font-family: 'Funnel Sans', sans-serif;
   color: var(--text-color);
@@ -30,14 +26,13 @@ body {
   line-height: 1.6;
 }
 
-/* Typographie titres */
+/* typo titres */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Delius', cursive;
   color: var(--secondary-color);
   font-size: 2rem;
 }
 
-/* Header */
 header {
   width: 100%;
   background: var(--primary-color);
@@ -68,7 +63,7 @@ header nav ul li a:hover {
   transform: scale(1.1);
 }
 
-/* Sections */
+/* section */
 section {
   padding: 4rem 2rem;
   text-align: center;
@@ -76,7 +71,7 @@ section {
   background-color: var(--accent-color);
 }
 
-/* Effet de vague après Jody Tavares et au-dessus de Contact */
+/* effet de vague après Jody et au-dessus de contact */
 #home::after, #contact::before {
   content: '';
   position: absolute;
@@ -97,7 +92,6 @@ section {
   transform: rotate(180deg);
 }
 
-/* Modification pour #home */
 #home {
   background-color: var(--primary-color);
   color: var(--white);
@@ -190,7 +184,7 @@ section {
   font-size: 1.5rem;
 }
 
-/* Section Mes compétences */
+/* compétences */
 #skills {
   padding: 4rem 2rem;
   background-color: var(--accent-color);
@@ -243,7 +237,7 @@ section {
   transform: rotate(10deg);
 }
 
-/* Section Présentation du projet */
+/* présentation du projet */
 #details {
   background-color: var(--accent-color);
   padding: 4rem 2rem;
@@ -251,7 +245,7 @@ section {
   border-radius: 8px;
 }
 
-/* Section Technologies */
+/* techno */
 #technologies {
   background-color: var(--accent-color);
   padding: 4rem 2rem;
@@ -264,7 +258,7 @@ section {
   gap: 2rem;
 }
 
-/* Section Fonctionnalités */
+/* fonctionnalité */
 #features {
   background-color: var(--accent-color);
   padding: 4rem 2rem;
@@ -288,7 +282,7 @@ section {
   padding-right: 1.5rem;
 }
 
-/* Section Vidéo */
+/* vidéo */
 #demo {
   background-color: var(--accent-color);
   padding: 4rem 2rem;
@@ -301,7 +295,7 @@ section {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+/* footer */
 footer {
   text-align: center;
   padding: 1rem 0;
@@ -337,7 +331,7 @@ footer p i.phone {
   color: var(--secondary-color);
 }
 
-/* Responsive Footer */
+/* responsive footer */
 @media (min-width: 768px) {
   footer p {
     flex-direction: row;
@@ -351,7 +345,7 @@ footer p i.phone {
   }
 }
 
-/* Boutons interactifs */
+/* boutons */
 .btn-primary {
   background-color: var(--primary-color);
   color: var(--button-text-color);
@@ -367,7 +361,7 @@ footer p i.phone {
   transform: scale(1.05);
 }
 
-/* Animation moderne au survol des liens */
+/* animation au survol */
 a {
   position: relative;
   display: inline-block;
@@ -388,7 +382,7 @@ a:hover::after {
   width: 100%;
 }
 
-/* Mobile First Styles */
+/* mobile first */
 header nav ul {
   flex-direction: column;
   align-items: center;
