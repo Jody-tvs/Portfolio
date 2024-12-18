@@ -184,6 +184,28 @@ section {
   font-size: 1.5rem;
 }
 
+ /* effet au scroll*/
+.fade-in-content {
+  opacity: 0; 
+  transform: translateY(50px); /* décalage vertical */
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  visibility: hidden; 
+}
+
+.fade-in-content.fade-in-left {
+  transform: translateX(-50px); /* décalage horizontal à gauche */
+}
+
+.fade-in-content.fade-in-right {
+  transform: translateX(50px); /* à droite */
+}
+
+.fade-in-content.visible {
+  opacity: 1; 
+  transform: translateX(0) translateY(0); 
+  visibility: visible;
+}
+
 /* compétences */
 #skills {
   padding: 4rem 2rem;
