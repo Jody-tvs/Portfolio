@@ -27,3 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fadeInContents.forEach(content => observer.observe(content))
 })
+
+const textElement = document.querySelector("#home h1")
+const text = textElement.textContent
+textElement.textContent = ""
+let i = 0
+
+//effet typewriting sur le titre
+function typeWriter() {
+  if (i < text.length) {
+    textElement.textContent += text.charAt(i)
+    i++
+    setTimeout(typeWriter, 100)
+  }
+}
+window.addEventListener("load", typeWriter)
