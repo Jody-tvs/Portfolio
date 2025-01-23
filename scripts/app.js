@@ -33,6 +33,34 @@ const text = textElement.textContent
 textElement.textContent = ""
 let i = 0
 
+//compétences
+const skills = [
+  { name: "JavaScript", icon: "fab fa-js" },
+  { name: "HTML", icon: "fab fa-html5" },
+  { name: "CSS", icon: "fab fa-css3-alt" },
+  { name: "SASS", icon: "fab fa-sass" },
+  { name: "React", icon: "fab fa-react" },
+  { name: "Node.js", icon: "fab fa-node-js" },
+  { name: "SQL", icon: "fas fa-database" },
+  { name: "Github", icon: "fab fa-github" },
+  { name: "Docker", icon: "fab fa-docker" },
+  { name: "Figma", icon: "fab fa-figma" },
+]
+
+const skillsContainer = document.getElementById("skills-container")
+
+skills.forEach(skill => {
+  const skillDiv = document.createElement("div")
+  skillDiv.classList.add("skill")
+
+  skillDiv.innerHTML = `
+    <i class="${skill.icon}"></i>
+    <p>${skill.name}</p>
+  `
+
+  skillsContainer.appendChild(skillDiv)
+})
+
 //effet typewriting sur le titre
 function typeWriter() {
   if (i < text.length) {
