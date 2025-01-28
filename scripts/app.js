@@ -182,20 +182,18 @@ projects.forEach((project) => {
   faqSection.appendChild(socialIconsContainer);
 })
 
+//select des éléments
+const menuToggle = document.querySelector('.menu-toggle')
+const navList = document.querySelector('.nav-list')
 
-// Sélection des éléments
-const menuToggle = document.querySelector('.menu-toggle');
-const navList = document.querySelector('.nav-list');
-
-// Écoute du clic sur le bouton menu
+//clic sur le bouton menu
 menuToggle.addEventListener('click', () => {
-  navList.classList.toggle('open');
-});
+  navList.classList.toggle('open')
+})
 
-// Fermer le menu lorsqu'on clique en dehors
+//ferme le menu au clique en dehors
 document.addEventListener('click', (e) => {
   if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
-    navList.classList.remove('open');
+    navList.classList.remove('open')
   }
-});
-
+})
