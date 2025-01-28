@@ -181,3 +181,21 @@ projects.forEach((project) => {
   // Ajout des icônes sous la FAQ
   faqSection.appendChild(socialIconsContainer);
 })
+
+
+// Sélection des éléments
+const menuToggle = document.querySelector('.menu-toggle');
+const navList = document.querySelector('.nav-list');
+
+// Écoute du clic sur le bouton menu
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('open');
+});
+
+// Fermer le menu lorsqu'on clique en dehors
+document.addEventListener('click', (e) => {
+  if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
+    navList.classList.remove('open');
+  }
+});
+
