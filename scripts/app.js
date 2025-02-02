@@ -1,31 +1,95 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //effet de fade-in au scroll
-  const fadeInContents = document.querySelectorAll(".fade-in-content")
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible")
-      } 
-    })
-  }, {
-    threshold: 0.2, //s'active quand 20% du contenu est visible
-  })
-  fadeInContents.forEach((content) => observer.observe(content))
 
-//effet d'écriture typewriter sur le nom prénom
-function typeWriter() {
-  if (i < text.length) {
-    textElement.textContent += text.charAt(i)
-    i++
-    setTimeout(typeWriter, 100)
-  }
-}
-window.addEventListener("load", typeWriter)
+ //section à propos
+ const aboutSection = document.querySelector("#about")
 
-const textElement = document.querySelector("#home h1")
-const text = textElement.textContent
-textElement.textContent = ""
-let i = 0
+ //injecte le HTML avec les fleches de scroll et la section à propos
+ aboutSection.innerHTML = `
+ <div class="about-container">
+   <div class="about-content">
+     <div class="about-text">
+       <h2>Développeuse Full Stack</h2>
+       <p>Créons ensemble des expériences mémorables</p>
+     </div>
+     <div class="about-buttons">
+       <a href="#contact-container" class="btn-primary">
+         <i class="fas fa-envelope"></i>
+       </a>
+       <a href="https://www.linkedin.com/in/jody-tavares-9762261b8/" target="_blank" class="btn-primary">
+         <i class="fab fa-linkedin"></i>
+       </a>
+       <a href="https://github.com/Jody-tvs" target="_blank" class="btn-primary">
+         <i class="fab fa-github"></i>
+       </a>
+       <a href="assets/CV.pdf" target="_blank" class="btn-primary">
+         <i class="fas fa-file-alt"></i> 
+       </a>
+     </div>
+   </div>
+
+   <!-- fleches de scroll -->
+   <div class="scroll-indicator">
+     <p class="scroll-text">En savoir plus</p>
+     <div class="arrows">
+       <span>↓</span>
+       <span>↓</span>
+     </div>
+   </div>
+ </div>
+
+ <section class="about-section fade-in-content">
+   <h2 class="about-title">À propos</h2>
+   <div class="about-wrapper">
+     <div class="about-logo">
+       <img src="assets/cercle.png" alt="cercle compétences" class="about-img">
+     </div>
+      <div class="about-text-container">
+          <p>Créer un site web, c’est raconter une histoire, transmettre une identité et offrir une expérience unique.</p>
+          <p>Issu d’une reconversion professionnelle après plusieurs années en tant que responsable dans le commerce, j’ai développé une approche centrée sur l’<strong>écoute</strong>, l’<strong>analyse des besoins</strong> et la mise en place de <strong>solutions adaptées</strong>.</p>
+          <p>Je conçois et développe des <strong>sites vitrines</strong> et <strong>e-commerce</strong>, en veillant à ce qu’ils soient clairs, responsives et en phase avec <strong>vos objectifs</strong>.</p>
+          <p>Que ce soit pour une <strong>création</strong>, une <strong>refonte</strong> ou l’<strong>ajout de fonctionnalités</strong>, j’accompagne chaque projet et adapte <strong>mes services</strong> pour répondre précisément à <strong>vos besoins</strong>.</p>
+        </div>
+   </section>
+ `
+
+ //effet d'apparition
+ const fadeInContents = document.querySelectorAll(".fade-in-content")
+ const observer = new IntersectionObserver((entries) => {
+   entries.forEach((entry) => {
+     if (entry.isIntersecting) {
+       entry.target.classList.add("visible");
+     }
+   })
+ }, {
+   threshold: 0.2, //s'active quand 20% du contenu est visible
+ })
+ fadeInContents.forEach((content) => observer.observe(content))
+
+ //cacher l'indicateur de scroll
+ const scrollIndicator = document.querySelector(".scroll-indicator")
+ window.addEventListener("scroll", () => {
+   if (window.scrollY > 50) {
+     scrollIndicator.style.opacity = "0"
+     scrollIndicator.style.transition = "opacity 1s ease-out"
+     scrollIndicator.style.pointerEvents = "none"
+   }
+ })
+
+ //menu toggle
+ const menuToggle = document.querySelector('.menu-toggle')
+ const navList = document.querySelector('.nav-list')
+
+ //clic sur le bouton menu
+ menuToggle.addEventListener('click', () => {
+   navList.classList.toggle('open')
+ })
+
+ //ferme le menu au clic en dehors
+ document.addEventListener('click', (e) => {
+   if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
+     navList.classList.remove('open')
+   }
+ })
 
 //compétences
 const skills = [
@@ -159,27 +223,27 @@ projects.forEach((project) => {
   })
   
   //liens sociaux
-  const socialIconsContainer = document.createElement("div");
-  socialIconsContainer.id = "social-icons";
+  const socialIconsContainer = document.createElement("div")
+  socialIconsContainer.id = "social-icons"
 
-  // Liste des icônes sociales
+  //icônes sociales
   const socialLinks = [
     { name: "LinkedIn", url: "https://www.linkedin.com/in/jody-tavares-9762261b8/", icon: "fab fa-linkedin" },
     { name: "GitHub", url: "https://github.com/Jody-tvs", icon: "fab fa-github" }
-  ];
+  ]
 
-  // Génération des liens
+  //génère les liens
   socialLinks.forEach(link => {
-    const a = document.createElement("a");
-    a.href = link.url;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    a.innerHTML = `<i class="${link.icon}"></i>`;
-    socialIconsContainer.appendChild(a);
-  });
+    const a = document.createElement("a")
+    a.href = link.url
+    a.target = "_blank"
+    a.rel = "noopener noreferrer"
+    a.innerHTML = `<i class="${link.icon}"></i>`
+    socialIconsContainer.appendChild(a)
+  })
 
-  // Ajout des icônes sous la FAQ
-  faqSection.appendChild(socialIconsContainer);
+  //icônes sous la FAQ
+  faqSection.appendChild(socialIconsContainer)
 })
 
 //select des éléments
