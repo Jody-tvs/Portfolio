@@ -770,6 +770,7 @@ a:hover::after {
     display: flex;
     justify-content: flex-end; 
     gap: 15px;
+    color: var(--white);
   }
 
   #social-icons {
