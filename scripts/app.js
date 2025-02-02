@@ -52,6 +52,22 @@ document.addEventListener("DOMContentLoaded", () => {
    </section>
  `
 
+  //effet machine 
+  const nameElement = document.querySelector("h1")
+  if (nameElement) {
+    const nameText = nameElement.textContent
+    nameElement.textContent = ""
+    let i = 0
+    function typeWriter() {
+      if (i < nameText.length) {
+        nameElement.textContent += nameText.charAt(i)
+        i++
+        setTimeout(typeWriter, 100)
+      }
+    }
+    typeWriter()
+  }
+
  //effet d'apparition
  const fadeInContents = document.querySelectorAll(".fade-in-content")
  const observer = new IntersectionObserver((entries) => {
@@ -68,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
  //cacher l'indicateur de scroll
  const scrollIndicator = document.querySelector(".scroll-indicator")
  window.addEventListener("scroll", () => {
-   if (window.scrollY > 50) {
+   if (window.scrollY > 50 && scrollIndicator.style.opacity !== "0") {
      scrollIndicator.style.opacity = "0"
      scrollIndicator.style.transition = "opacity 1s ease-out"
      scrollIndicator.style.pointerEvents = "none"
@@ -76,20 +92,23 @@ document.addEventListener("DOMContentLoaded", () => {
  })
 
  //menu toggle
- const menuToggle = document.querySelector('.menu-toggle')
- const navList = document.querySelector('.nav-list')
+ document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle")
+  const navList = document.querySelector(".nav-list")
 
- //clic sur le bouton menu
- menuToggle.addEventListener('click', () => {
-   navList.classList.toggle('open')
- })
+  if (menuToggle && navList) {
+      menuToggle.addEventListener("click", (event) => {
+          event.preventDefault()
+          navList.classList.toggle("open")
+      })
 
- //ferme le menu au clic en dehors
- document.addEventListener('click', (e) => {
-   if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
-     navList.classList.remove('open')
-   }
- })
+      document.addEventListener("click", (e) => {
+          if (!menuToggle.contains(e.target) && !navList.contains(e.target)) {
+              navList.classList.remove("open")
+          }
+      })
+  }
+})
 
 //compétences
 const skills = [

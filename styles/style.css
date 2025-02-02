@@ -90,20 +90,26 @@ header nav ul li a:hover {
 
 /* masque la nav bar de navigation */
 .nav-list {
-  display: none;
-  flex-direction: column;
   position: absolute;
-  top: 100%;
+  top: 60px;
   left: 0;
   width: 100%;
   background-color: #00b7af;
-  padding: 1rem 0;
+  padding: 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
 }
 
-/* affiche la nav bar lorsqu'on active le menu */
+/* affiche le menu quand il est activer */
 .nav-list.open {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  padding: 1rem 0;
 }
 
 .nav-list li {
@@ -709,11 +715,19 @@ a:hover::after {
   }
   
   .nav-list {
-    display: flex; 
+    display: flex !important; 
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
     flex-direction: row;
     position: static;
     background: none;
     box-shadow: none;
+    justify-content: space-around;
+  }
+
+  .nav-list.open {
+    display: flex;
   }
 
   #home h1 {
