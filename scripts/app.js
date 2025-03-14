@@ -143,6 +143,7 @@ const projects = [
     description: "Site e-commerce créé avec JavaScript, SASS et HTML.",
     image: "assets/folie.png",
     link: "projets/projet1.html",
+    siteUrl: "https://folie-d-armes-b39wnmqdh-jody-tvs-projects.vercel.app"
   },
   {
     title: "Manhattan Restaurant",
