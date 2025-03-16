@@ -247,6 +247,7 @@ header nav ul li a:hover {
 .scroll-indicator .arrows {
   font-size: 2rem;
   animation: bounce 1.5s infinite;
+  will-change: transform;
 }
 
 @keyframes bounce {
@@ -378,11 +379,13 @@ section {
   align-items: flex-start;
   gap: 24px;
   padding: 20px;
+  flex-wrap: wrap;
 }
 
 #contact-form,
 #faq-section {
   width: 48%;
+  min-width: 300px;
 }
 
 #contact-form {
@@ -462,7 +465,7 @@ section {
 }
 
 .faq-question:hover {
-  background-color: #008f89;
+  background-color: #006b66;
 }
 
 .faq-answer {
@@ -651,6 +654,16 @@ footer p i.phone {
   font-weight: bold;
   border-radius: 5px;
   transition: background-color 0.3s, transform 0.3s;
+  display: inline-block;
+  width: auto;  
+}
+
+.links {
+  background-color: var(--accent-color); 
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
 }
 
 .btn-primary:hover {

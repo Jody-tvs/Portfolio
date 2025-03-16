@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Jody Tavares</title>
+
+    <link rel="preload" as="image" href="images/Jo.webp" imagesrcset="images/Jo.webp" imagesizes="100vw">
     <link rel="stylesheet" href="styles/style.css">
     
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQWJZTB467"></script>
@@ -15,6 +17,9 @@
   gtag('config', 'G-LQWJZTB467')
 
 </script>
+
+<link rel="icon" type="image/webp" href="images/Jo.webp">
+
 </head>
 <body>
     <header class="navbar">
@@ -33,13 +38,14 @@
         <section id="home">
             <div class="home-content">
                 <h1>Jody Tavares</h1>
-                <img src="images/Jo.png" alt="Jody Tavares photo" class="home-photo">
+                <img src="images/Jo.webp" alt="Jody Tavares photo" class="home-photo" width="300" height="300">
             </div>
         </section>
 
         <!--section about-->
         <section id="about">
             <div class="fade-in-content fade-in-left">
+            </div>
         </section>
        
         <!--section compétences-->
@@ -90,6 +96,6 @@
         <p>&copy; 2025 Jody Tavares | Tous droits réservés.</p>
     </footer>
 
-    <script src="scripts/app.js"></script>
+    <script src="scripts/app.js" defer></script>
 </body>
 </html>

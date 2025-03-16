@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
    <h2 class="about-title">À propos</h2>
    <div class="about-wrapper">
      <div class="about-logo">
-       <img src="assets/cercle.png" alt="cercle compétences" class="about-img">
+       <img src="assets/cercle.webp" alt="cercle compétences" class="about-img">
      </div>
       <div class="about-text-container">
           <p>Créer un site web, c’est raconter une histoire, transmettre une identité et offrir une expérience unique.</p>
@@ -58,11 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameText = nameElement.textContent
     nameElement.textContent = ""
     let i = 0
+    const typingSpeed = 100
+
     function typeWriter() {
       if (i < nameText.length) {
         nameElement.textContent += nameText.charAt(i)
         i++
-        setTimeout(typeWriter, 100)
+        setTimeout(typeWriter, typingSpeed)
       }
     }
     typeWriter()
@@ -141,21 +143,21 @@ const projects = [
   {
     title: "Folie d'Armes",
     description: "Site e-commerce créé avec JavaScript, SASS et HTML.",
-    image: "assets/folie.png",
+    image: "assets/folie.webp",
     link: "projets/projet1.html",
     siteUrl: "https://foliedarmes.site/"
   },
   {
     title: "Manhattan Restaurant",
     description: "Site vitrine créé avec HTML et CSS.",
-    image: "assets/manhattan.png",
+    image: "assets/manhattan.webp",
     link: "projets/projet2.html",
     siteUrl: "https://jody-tvs.github.io/Manhattan/"
   },
   {
     title: "Le monde à portée",
     description: "Blog de voyage créé avec HTML, CSS et JavaScript.",
-    image: "assets/monde.png",
+    image: "assets/monde.webp",
     link: "projets/projet3.html",
     siteUrl: "https://jody-tvs.github.io/Le-Monde-Port-e/"
 
