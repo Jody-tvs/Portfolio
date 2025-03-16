@@ -147,21 +147,21 @@ const projects = [
   {
     title: "Folie d'Armes",
     description: "Site e-commerce créé avec JavaScript, SASS et HTML.",
-    image: "assets/folie.webp",
+    image: "assets/folie.avif",
     link: "projets/projet1.html",
     siteUrl: "https://foliedarmes.site/"
   },
   {
     title: "Manhattan Restaurant",
     description: "Site vitrine créé avec HTML et CSS.",
-    image: "assets/manhattan.webp",
+    image: "assets/manhattan.avif",
     link: "projets/projet2.html",
     siteUrl: "https://jody-tvs.github.io/Manhattan/"
   },
   {
     title: "Le monde à portée",
     description: "Blog de voyage créé avec HTML, CSS et JavaScript.",
-    image: "assets/monde.webp",
+    image: "assets/monde.avif",
     link: "projets/projet3.html",
     siteUrl: "https://jody-tvs.github.io/Le-Monde-Port-e/"
 
