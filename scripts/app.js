@@ -13,19 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
      </div>
      <div class="about-buttons">
        <a href="#contact-container" class="btn-primary">
-         <i class="fas fa-envelope"></i>
+      <img src="../assets/icons/envelope-solid.svg" alt="Contact" width="24" height="24">
          <span class="sr-only">Contact</span>
        </a>
-       <a href="https://www.linkedin.com/in/jody-tavares-9762261b8/" target="_blank" class="btn-primary">
-         <i class="fab fa-linkedin"></i>
-         <span class="sr-only">LinkedIn</span>
-       </a>
+      <a href="https://linkedin.com" target="_blank" class="btn-primary">
+      <img src="../assets/icons/linkedin-brands.svg" alt="LinkedIn" width="24" height="24">
+      <span class="sr-only">LinkedIn</span>
+      </a>
        <a href="https://github.com/Jody-tvs" target="_blank" class="btn-primary">
-         <i class="fab fa-github"></i>
+      <img src="../assets/icons/github-brands.svg" alt="GitHub" width="24" height="24">
          <span class="sr-only">GitHub</span>
        </a>
        <a href="assets/CV.pdf" target="_blank" class="btn-primary">
-         <i class="fas fa-file-alt"></i> 
+         <img src="../assets/icons/file-solid.svg" alt="CV" width="24" height="24">
          <span class="sr-only">Télécharger le CV</span>
        </a>
      </div>
@@ -254,8 +254,8 @@ projects.forEach((project) => {
 
   //icônes sociales
   const socialLinks = [
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/jody-tavares-9762261b8/", icon: "fab fa-linkedin" },
-    { name: "GitHub", url: "https://github.com/Jody-tvs", icon: "fab fa-github" }
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/jody-tavares-9762261b8/", icon: "../assets/icons/linkedin-brands.svg" },
+    { name: "GitHub", url: "https://github.com/Jody-tvs", icon: "../assets/icons/github-brands.svg" }
   ]
 
   //génère les liens
@@ -264,8 +264,23 @@ projects.forEach((project) => {
     a.href = link.url
     a.target = "_blank"
     a.rel = "noopener noreferrer"
-    a.innerHTML = `<i class="${link.icon}" aria-hidden="true"></i>
-    <span class="sr-only">${link.name}</span>`
+  
+    //on crée l’élément image
+    const img = document.createElement("img")
+    img.src = link.icon
+    img.alt = link.name
+    img.width = 30
+    img.height = 30
+  
+    //ajoute l’image et le texte accessible au lien
+    a.appendChild(img)
+  
+    const span = document.createElement("span")
+    span.classList.add("sr-only")
+    span.textContent = link.name
+    a.appendChild(span)
+  
+    //ajoute le lien au conteneur
     socialIconsContainer.appendChild(a)
   })
 

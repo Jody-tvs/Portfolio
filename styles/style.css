@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@400;700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 /* variables */
 :root {
@@ -505,7 +504,7 @@ section {
 #social-icons a {
   text-decoration: none;
   font-size: 1.8rem; 
-  color: var(--white); 
+  color: white; 
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
