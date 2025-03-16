@@ -114,6 +114,7 @@ header nav ul li a:hover {
   visibility: visible;
   height: auto;
   padding: 1rem 0;
+  background-color: var(--primary-color);
 }
 
 .nav-list li {
