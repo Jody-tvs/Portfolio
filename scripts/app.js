@@ -264,7 +264,8 @@ projects.forEach((project) => {
     a.href = link.url
     a.target = "_blank"
     a.rel = "noopener noreferrer"
-    a.innerHTML = `<i class="${link.icon}"></i>`
+    a.innerHTML = `<i class="${link.icon}" aria-hidden="true"></i>
+    <span class="sr-only">${link.name}</span>`
     socialIconsContainer.appendChild(a)
   })
 

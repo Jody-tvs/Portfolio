@@ -4,13 +4,13 @@
 
 /* variables */
 :root {
-  --primary-color: #00b7af;
-  --secondary-color: #e9630a;
+  --primary-color: #008b85;
+  --secondary-color: #c74d00;
   --accent-color: #fee7b3;
   --background-color: #f3f4f6;
   --text-color: #333333;
   --white: #ffffff;
-  --button-hover-color: #ff8c42;
+  --button-hover-color: #e06f28;
   --button-text-color: #111111;
 }
 
@@ -155,10 +155,14 @@ header nav ul li a:hover {
 
 .sr-only {
   position: absolute;
-  left: -9999px;
   width: 1px;
   height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* section about */
@@ -246,7 +250,7 @@ header nav ul li a:hover {
 .scroll-indicator {
   text-align: center;
   font-size: 1.2rem;
-  color: #e9630a;
+  color: var(--secondary-color);
   font-weight: bold;
   margin-top: 50px;
   cursor: pointer;
