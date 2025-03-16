@@ -466,8 +466,9 @@ section {
 .faq-question {
   width: 100%;
   padding: 10px 15px;
-  background-color: #008f89;
-  color: white;
+  background-color: #ffffff;
+  color: #00b7af;
+  border: 2px solid #008a83;
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -477,7 +478,8 @@ section {
 }
 
 .faq-question:hover {
-  background-color: #006b66;
+  background-color: #008a83;
+  color: #fee7b3;
 }
 
 .faq-answer {
