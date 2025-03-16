@@ -61,8 +61,8 @@ header nav ul li {
 
 header nav ul li a {
   text-decoration: none;
-  color: var(--white);
-  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   font-size: 1.1rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -151,6 +151,14 @@ header nav ul li a:hover {
   align-items: center;
   justify-content: center;
   color: var(--white);
+}
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 /* section about */
@@ -350,10 +358,10 @@ section {
 }
 
 #projects .project a {
-  color: var(--button-text-color);
+  color: var(--white);
   background-color: var(--secondary-color);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
   text-decoration: none;
-  font-weight: bold;
   padding: 0.8rem 1.5rem;
   margin: 1rem;
   border-radius: 5px;
@@ -426,7 +434,7 @@ section {
 
 #contact-form button {
   width: auto;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--white);
   border: none;
   padding: 8px 30px;
@@ -438,7 +446,7 @@ section {
 }
 
 #contact-form button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--button-hover-color);
   transform: translateY(-2px);
 }
 
@@ -648,7 +656,8 @@ footer p i.phone {
 /* buttons */
 .btn-primary {
   background-color: var(--primary-color);
-  color: var(--button-text-color);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
   padding: 0.8rem 2rem;
   text-decoration: none;
   font-weight: bold;

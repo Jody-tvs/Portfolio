@@ -14,15 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
      <div class="about-buttons">
        <a href="#contact-container" class="btn-primary">
          <i class="fas fa-envelope"></i>
+         <span class="sr-only">Contact</span>
        </a>
        <a href="https://www.linkedin.com/in/jody-tavares-9762261b8/" target="_blank" class="btn-primary">
          <i class="fab fa-linkedin"></i>
+         <span class="sr-only">LinkedIn</span>
        </a>
        <a href="https://github.com/Jody-tvs" target="_blank" class="btn-primary">
          <i class="fab fa-github"></i>
+         <span class="sr-only">GitHub</span>
        </a>
        <a href="assets/CV.pdf" target="_blank" class="btn-primary">
          <i class="fas fa-file-alt"></i> 
+         <span class="sr-only">Télécharger le CV</span>
        </a>
      </div>
    </div>
